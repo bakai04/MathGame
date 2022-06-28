@@ -22,7 +22,7 @@ const renderExample = (data) => {
   const form = document.querySelector(".task-form");
   form?.classList.remove("task-form--active");
   form?.classList.add("task-form--active");
-  task.textContent = `${data.num1} ${data.operator} ${data.num2} =`;
+  if(task) task.innerHTML = `${data.num1} ${data.operator} ${data.num2} =`;
 };
 export function renderTask() {
   const result = document.querySelector(".result");
@@ -33,7 +33,7 @@ export function renderTask() {
   result?.focus();
   renderExample(example);
 
-  form.addEventListener("submit", () => {
+  form?.addEventListener("submit", () => {
     if (!result.value && result.value !== 0) return;
     count += Number(result.value) === Number(example.result) ? 1 : -1;
     winElement.textContent = count;

@@ -1,8 +1,8 @@
 extends ../sample.pug
 block content
     .container
+        include ../includes/navbar
         .tasks
-            .tasks__inner
             form.task-form(onsubmit='return false')
                 .task
                 input.result(type='number')

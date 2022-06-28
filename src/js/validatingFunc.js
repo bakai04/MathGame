@@ -21,34 +21,6 @@ const inputValidatingFunctions = {
       }
     },
   ],
-  email: [
-    function (value) {
-      if (value.length <= 0) {
-        return "поле обязательно*";
-      } else {
-        return "";
-      }
-    },
-    function (value) {
-      if (value.length < 3) {
-        return "должно быть более 3 символов*";
-      }
-    },
-  ],
-  textarea: [
-    function (value) {
-      if (value.length <= 0) {
-        return "поле обязательно*";
-      } else {
-        return "";
-      }
-    },
-    function (value) {
-      if (value.length < 3) {
-        return "должно быть более 3 символов*";
-      }
-    },
-  ],
 };
 
 export function renderValidation(formInput) {
@@ -61,6 +33,8 @@ export function renderValidation(formInput) {
     if (errorText) return;
     errorText = getErrorText(formInput.value);
   });
+
+
   warningErrorText.textContent = errorText;
   formInput.classList.add("error");
   if (!errorText) {

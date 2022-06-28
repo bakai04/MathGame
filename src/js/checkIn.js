@@ -1,19 +1,24 @@
 import { renderValidation } from "./validatingFunc.js";
 
+function submitUserData() {
+  const nameInput = document.querySelector(".name");
+  localStorage.setItem("data", JSON.stringify(nameInput.value));
+}
+
 function checkIn() {
-  const name = document.querySelector(".name");
+  const nameInput = document.querySelector(".name");
   const checkInBtn = document.querySelector(".check-in");
 
   checkInBtn?.addEventListener("click", function () {
     let inputNameValue = renderValidation(nameInput);
-    name.addEventListener("input", () => {
-      renderValidation(name);
+    nameInput.addEventListener("input", () => {
+      renderValidation(nameInput);
     });
-    renderValidation(name);
-    if(inputNameValue === true){
-        alert("ds ecgtiyj pfhtu")
+    renderValidation(nameInput);
+    if (inputNameValue === true) {
+      submitUserData();
     }
-});
+  });
 }
 
 export default checkIn;
