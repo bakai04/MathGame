@@ -1,0 +1,11 @@
+extends ../sample.pug
+block content
+    .container
+        .tasks
+            .tasks__inner
+            form.task-form(onsubmit='return false')
+                .task
+                input.result(type='number')
+            .center
+                h3 Score:
+                .count 0

@@ -1,0 +1,57 @@
+.tasks{
+    background-color: #fff;
+  }
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .task-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vw;
+    transform: translateX(200vw);
+    opacity: 0;
+    transition: ease 2s;
+  }
+  
+  .task-form--active{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: ease 2s;
+  
+  }
+  .task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    padding: 5vw;
+  }
+  
+  
+  .result {
+    border: 2px solid #000;
+    border-radius: 8px;
+    width: 14vw;
+    font-size: 5vw;
+    padding: 2vw;
+  }
+  
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .count {
+    font-size: 60px;
+    text-align: center;
+  }
+  
+  h3 {
+    margin-top: 30px;
+    font-size: 26px;
+  }

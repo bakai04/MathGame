@@ -1,0 +1,80 @@
+.gameBoard {
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+
+    p {
+        font-size: 40px;
+    }
+    .warning-name-error{
+        font-size: 14px;
+        text-align: left;
+        color: red;
+    }
+    .logo {
+        width: 150px;
+    }
+
+    input {
+        margin-top: 20px;
+        height: 50px;
+        width: 100%;
+        padding-left: 20px;
+        border-radius: 5px;
+        border: 1px solid black;
+        font-size: 20px;
+    }
+
+    .check-in {
+        width: 100%;
+        height: 50px;
+        margin-top: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        color: #FFF;
+        background-color: #0487B0;
+    }    
+    .check-in:hover{
+        background-color: #047da1;
+    }
+
+    .mode {
+        margin-top: 20px;
+        width: 100%;
+
+        p {
+            font-size: 30px;
+        }
+
+        .practice {
+            background-color: aqua;
+        }
+        .practice:hover{
+            background-color: rgb(4, 228, 228);
+        }
+
+
+        .timeAttack {
+            background-color: rgb(143, 236, 143);
+        }
+        .timeAttack:hover{
+            background-color: rgb(122, 212, 122);
+        }
+        .leaders{
+            background-color: aquamarine;
+        }
+        .leaders:hover{
+            background-color: rgb(111, 218, 182);
+        }
+        .practice,
+        .timeAttack,
+        .leaders {
+            width: 100%;
+            height: 50px;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+
+        }
+    }
+}

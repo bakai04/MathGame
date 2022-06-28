@@ -1,0 +1,14 @@
+@import 'https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap';
+@import './pages/index.scss';
+@import './pages/practice.scss';
+* {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+body {
+  background-color: #eee;
+}
