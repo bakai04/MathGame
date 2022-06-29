@@ -2,11 +2,16 @@ const getRandom = (min, max) => {
   return Math.round(Math.random() * (max - min) + min);
 };
 
+
+
+
 const sum = (a, b, operator) => {
   if (operator === "+") return a + b;
   if (operator === "-") return a - b;
   return a * b;
 };
+
+
 
 const generateExample = () => {
   const operators = ["+", "-", "*"];
@@ -17,6 +22,8 @@ const generateExample = () => {
   return { num1, num2, operator, result };
 };
 
+
+
 const renderExample = (data) => {
   const task = document.querySelector(".task");
   const form = document.querySelector(".task-form");
@@ -24,6 +31,9 @@ const renderExample = (data) => {
   form?.classList.add("task-form--active");
   if(task) task.innerHTML = `${data.num1} ${data.operator} ${data.num2} =`;
 };
+
+
+
 export function renderTask() {
   const result = document.querySelector(".result");
   const winElement = document.querySelector(".count");
