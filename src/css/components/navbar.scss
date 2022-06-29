@@ -1,4 +1,7 @@
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .navbar__logo {
         display: flex;
         align-items: center;
@@ -23,6 +26,24 @@
                 margin: 0px;
 
             }
+        }
+    }
+
+    .toggle-game {
+        .toggle-game__btn {
+            height: 50px;
+            font-size: 16px;
+            border: 0px;
+            letter-spacing: 2px;
+            width: 235px;
+            color: #FFF;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: ease 0.2s;
+            background-color: #0278ED;
+        }
+        .toggle-game__btn:hover {
+            background-color: #56a4f1;
         }
     }
 }

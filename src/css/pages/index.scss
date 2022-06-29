@@ -5,6 +5,7 @@
 
     p {
         font-size: 40px;
+        text-transform: capitalize;
     }
 
     .warning-name-error {
@@ -39,9 +40,12 @@
         letter-spacing: 2px;
         border: 0px;
     }
-    .check-in:disabled{
+
+    .check-in:disabled {
         background-color: #97cea4;
+        pointer-events: none;
     }
+
     .check-in:hover {
         background-color: #61da7d;
     }
@@ -70,9 +74,12 @@
         .timeAttack:hover {
             background-color: #f77c66;
         }
+
         .timeAttack:disabled {
             background-color: #f1a79a;
+            pointer-events: none;
         }
+
         .leaders {
             background-color: #FF9209;
         }

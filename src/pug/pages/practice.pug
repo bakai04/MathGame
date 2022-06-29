@@ -2,10 +2,13 @@ extends ../sample.pug
 block content
     .container
         include ../includes/navbar
-        .tasks
-            form.task-form(onsubmit='return false')
-                .task
-                input.result(type='number')
-            .center
-                h3 Score:
-                .count 0
+        .game
+            p.level Level: 1
+            .tasks
+                form.task-form(onsubmit='return false')
+                    .task
+                    input.result(type='number')
+                .center
+                    h3 Score:
+                    .count 0
+

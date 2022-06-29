@@ -1,44 +1,49 @@
-.tasks {
+.game {
   background-color: #fff;
-
-  .task-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3vw;
-
-    .task {
+  padding: 15px;
+  .level{
+    font-size: 25px;
+  }
+  .tasks {
+    .task-form {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 5vw;
-      padding: 5vw;
+      margin-bottom: 3vw;
+
+      .task {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 70px;
+        padding: 5vw;
+      }
+
+      .result {
+        border: 2px solid #000;
+        border-radius: 8px;
+        width: 200px;
+        font-size: 70px;
+        padding: 2vw;
+      }
+
     }
 
-    .result {
-      border: 2px solid #000;
-      border-radius: 8px;
-      width: 14vw;
-      font-size: 5vw;
-      padding: 2vw;
-    }
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-  }
+      .count {
+        font-size: 60px;
+        text-align: center;
+      }
 
-  .center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .count {
-      font-size: 60px;
-      text-align: center;
-    }
-
-    h3 {
-      margin-top: 30px;
-      font-size: 26px;
+      h3 {
+        margin-top: 30px;
+        font-size: 26px;
+      }
     }
   }
 }
