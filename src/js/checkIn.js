@@ -41,7 +41,6 @@ function checkIn(usersData) {
 
   let userData = JSON.parse(localStorage.getItem("data"));
   checkRegistered();
-
   if (nameInput && userData) nameInput.value = userData.name;
   
   checkInBtn?.addEventListener("click", function () {
