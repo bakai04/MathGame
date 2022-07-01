@@ -1,11 +1,6 @@
-import axios from "axios";
 async function getUsersData() {
-  let usersData;
-  await axios
-    .get("https://62bbd125eff39ad5ee157b99.mockapi.io/gamers")
-    .then((res) => {
-      usersData = res.data;
-    });
+  let usersData = await JSON.parse(localStorage.getItem("data"));
+  if(!usersData) usersData=[];
   return usersData;
 }
 export default getUsersData;

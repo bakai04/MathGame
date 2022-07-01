@@ -19,35 +19,28 @@ const inputValidatingFunctions = {
       if (value.length < 3) {
         return "должно быть более 3 символов*";
       } else {
-        return "";
-      }
-    },
-    function (value, usersData) {
-      let checkSameEl = usersData.some((element) => value === element.name);
-      if (checkSameEl) {
-        return "это имя занято*";
-      } else {
-        return "";
+        return "name";
       }
     },
   ],
+
 };
 
-export function renderValidation(formInput, usersData) {
+export function renderValidation(formInput) {
   const warningErrorText = document.querySelector(
     `.warning-${formInput.name}-error`
   );
-  
+
   let errorText = "";
-  
+
   inputValidatingFunctions[formInput.name].forEach((getErrorText) => {
     if (errorText) return;
-    errorText = getErrorText(formInput.value , usersData);
+    errorText = getErrorText(formInput.value);
   });
 
   warningErrorText.textContent = errorText;
   formInput.classList.add("error");
-  if (!errorText) {
+  if (errorText==="name") {
     formInput.classList.remove("error");
     return true;
   }

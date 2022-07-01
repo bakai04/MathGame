@@ -2,18 +2,20 @@ extends ../sample.pug
 block content
     .container
         include ../includes/navbar
-        .d-flex.align-items-center.practise
-            .instruction
-                h2.instruction__title Инструкция этого режима
-                p.instruction__text.col-5 В этом режиме вы можете играть сколько вам захочиться. Уровень задач будет менятся автоматически. Чем больше уровень тем сложнее задачи 
-                button.toggle-game__btn Start game
-            .game.d-none
-                p.level Level: 1
-                .tasks
-                    form.task-form(onsubmit='return false')
-                        .task
-                        input.result(type='number')
-                    .center
-                        h3 Score:
-                        .count 0
+        .practise
+            .rules.active
+                .rules__inner.bag-white.col-7
+                    h2.rules__title Правила этого режима
+                    p.rules__text.col-8 В этом режиме вы можете играть сколько вам захочиться. Уровень задач будет менятся автоматически. Чем больше уровень тем сложнее задачи и больше очков 
+                    button.toggle-game__btn.start-btn Start game
+            .game
+                .container.bag-white
+                    p.level Level: 1
+                    .tasks
+                        form.task-form(onsubmit='return false')
+                            .task
+                            input.result(type='number')
+                        .center
+                            h3 Score:
+                            .count 0
 
