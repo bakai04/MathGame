@@ -1,56 +1,38 @@
 import { renderValidation } from "./validatingFunc.js";
-import axios from "axios";
 
 async function checkRegistered() {
   const sendFormDataBtn = document.querySelector(".check-in");
-  const timeAtackBtn = document.querySelector(".timeAttack");
-
   let userData = await JSON.parse(localStorage.getItem("data"));
-
-  if (userData) {
-    sendFormDataBtn.textContent = "Вы зарегистрированы";
-    sendFormDataBtn.disabled = true;
-    timeAtackBtn.disabled = false;
-  }
 }
 
-function submitUserData() {
+function submitUserData(data) {
   const nameInput = document.querySelector(".name");
-  const sendFormDataBtn = document.querySelector(".check-in");
-  const data = {
+  const obj = {
     name: nameInput.value,
     trainingAtack: 0,
     practise: 0,
   };
-
-  sendFormDataBtn.disabled = true;
-  sendFormDataBtn.textContent = "registration...";
-
-  setTimeout(() => {
-    localStorage.setItem("data", JSON.stringify(data));
-    axios.post("https://62bbd125eff39ad5ee157b99.mockapi.io/gamers", data);
-    sendFormDataBtn.disabled = false;
-    sendFormDataBtn.textContent = "";
-    checkRegistered();
-  }, 2000);
+  localStorage.setItem("data", JSON.stringify([...data, obj]));
+  checkRegistered();
 }
 
-function checkIn(usersData) {
+function checkIn(data) {
   const nameInput = document.querySelector(".name");
   const checkInBtn = document.querySelector(".check-in");
 
-  let userData = JSON.parse(localStorage.getItem("data"));
   checkRegistered();
-  if (nameInput && userData) nameInput.value = userData.name;
-  
+  if (nameInput && data.length > 0) nameInput.value = data[data.length - 1].name;
+
   checkInBtn?.addEventListener("click", function () {
-    let inputNameValue = renderValidation(nameInput, usersData);
+    let inputNameValue = renderValidation(nameInput);
+
     nameInput.addEventListener("input", () => {
-      renderValidation(nameInput, usersData);
+      renderValidation(nameInput);
     });
-    renderValidation(nameInput, usersData);
+    nameInput.focus();
+    renderValidation(nameInput);
     if (inputNameValue === true) {
-      submitUserData();
+      submitUserData(data);
     }
   });
 }

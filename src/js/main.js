@@ -1,12 +1,12 @@
 import "../css/main.scss";
 import checkIn from "./checkIn.js";
 import navbar from "./navbar.js";
-import { renderTask } from "./renderTask.js";
 import getUsersData from "./getUsersData.js";
+import startGame from "./startGame.js";
 
 const usersData = getUsersData();
-usersData.then((data) => {
+usersData.then(data=>{
   checkIn(data);
 });
-renderTask();
+startGame()
 navbar();

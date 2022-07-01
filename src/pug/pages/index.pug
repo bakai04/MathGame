@@ -4,14 +4,15 @@ block content
         .gameBoard
             img.logo(src="./assets/img/maths-1426891_960_720.webp")
             p Hello Gamer
-            input.name(placeholder="name", name="name")
-            p.warning-name-error 
+            .placeholder-form
+                .placeholder-container
+                  input.name(type='text', placeholder=' ', name="name")
+                  label.warning-name-error name 
             button.check-in Check in 
             .mode
                 p Choose Your Game Mode
                 form(action="./practice.html")
                     button.practice Practice
                 form(action="./timeAtack.html")
-                    button.timeAttack(disabled="true") Time Attack
-                form(action="./leaders.html")
-                    button.leaders Leaders
+                    button.timeAttack Time Attack
+            a.leaders(href="./leaders.html") Leaders
