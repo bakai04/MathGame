@@ -1,0 +1,56 @@
+.result-page{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.35);
+
+    .result__inner {
+        background-color: #FFF;
+        padding: 15px;
+        margin: 0 auto;
+        a{
+            text-decoration: none;
+        }
+        .back-to-main {
+            margin-left: 15px;
+            color: black;
+        }
+
+        .result__item {
+            .game-over {
+                font-size: 50px;
+            }
+
+            .your-count {
+                font-size: 35px;
+            }
+
+            .count {
+                font-size: 100px;
+                line-height: 80px;
+                margin-bottom: 30px;
+            }
+
+            .incorrect,
+            .correct {
+                font-size: 20px;
+            }
+
+            button {
+                width: 341px;
+                padding: 16px;
+                border: 0px;
+                letter-spacing: 1.5px;
+                margin-bottom: 10px;
+                background: #0487B0;
+                color: #FFFFFF;
+            }
+            
+            button:hover{
+                background: #2e5764;
+            }
+        }
+    }
+}

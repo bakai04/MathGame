@@ -7,6 +7,7 @@ import startGame from "./startGame.js";
 const usersData = getUsersData();
 usersData.then(data=>{
   checkIn(data);
+  navbar(data);
 });
 startGame()
-navbar();
+

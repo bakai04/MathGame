@@ -2,11 +2,11 @@
 @import './pages/index.scss';
 @import './pages/practice.scss';
 @import './components/navbar.scss';
+@import './components/result.scss';
 
 
 
 @import './adaptive/mainOfAdaptive.scss';
-
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +16,9 @@
 
 body {
   background-color: #eee;
-
-  p {
-    margin-bottom: 0px;
-  }
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }

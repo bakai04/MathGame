@@ -1,3 +1,5 @@
+import stopGame from "./stopGame.js";
+
 const getRandom = (min, max) => {
   return Math.round(Math.random() * (max - min) + min);
 };
@@ -37,12 +39,16 @@ export function renderTask() {
   const result = document.querySelector(".result");
   const winElement = document.querySelector(".count");
   const form = document.querySelector(".task-form");
+  const stopBtn = document.querySelector(".stop-btn");
 
   let count = 0;
   let example = generateExample();
   let point = 1;
 
-
+  stopBtn.addEventListener("click", () => {
+    stopGame(count);
+  });
+  
   result?.focus();
   renderExample(example);
 
@@ -51,11 +57,10 @@ export function renderTask() {
     count +=
       Number(result.value) === Number(example.result) ? point : point * -1;
     winElement.textContent = count;
-    
+
     point = renderLevel(count);
     result.value = "";
     example = generateExample();
     renderExample(example);
-
   });
 }

@@ -22,12 +22,12 @@ module.exports = {
       directory: path.join(__dirname, "dist"),
     },
     watchFiles: {
-      paths: [...PAGES_DIR],
+      paths: [],
       options: {
         usePolling: true,
       },
     },
-    port: 4001,
+    port: 5000,
   },
   plugins: [
     new CopyPlugin({
@@ -47,7 +47,7 @@ module.exports = {
     ),
   ],
 
-  module: { 
+  module: {
     rules: [
       {
         test: /\.css$/i,
