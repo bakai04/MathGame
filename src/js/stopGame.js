@@ -22,7 +22,7 @@ function stopGame(usersData) {
   const stopBtn = document.querySelector(".stop-btn");
   const resultGame = document.querySelector(".result-page");
 
-  stopBtn.addEventListener("click", () => {
+  stopBtn?.addEventListener("click", () => {
     resultGame.classList.toggle("d-none");
     checkLastRecord(usersData);
   });
