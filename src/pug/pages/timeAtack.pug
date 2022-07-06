@@ -1,3 +1,21 @@
 extends ../sample.pug
 block content
-    p leaders
+    .container
+        include ../includes/navbar
+        .practise
+            .game
+                .container.bag-white
+                    .d-flex.align-items-center.game__inform
+                        p.level Level: 1
+                        p.correct correct: 0
+                        p.incorrect Incorrect: 0
+                    .tasks
+                        form.task-form(onsubmit='return false')
+                            .task
+                            input.result(type='number')
+                        .center
+                            h3 Score:
+                            p.count 0
+    include ../includes/result
+
+

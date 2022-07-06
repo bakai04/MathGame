@@ -1,42 +1,33 @@
-import { renderValidation } from "./validatingFunc.js";
+const nameInput = document.querySelector(".name");
 
-async function checkRegistered(usersData) {
-  const nameInput = document.querySelector(".name");
-  nameInput.value = usersData[usersData.length - 1].name;
-}
-
-function submitUserData(data) {
-  const nameInput = document.querySelector(".name");
-
-  const obj = {
+function submitUserData(usersData) {
+  const user = {
     name: nameInput.value,
-    trainingAtack: 0,
+    timeAtack: 0,
     practise: 0,
   };
 
-  localStorage.setItem("data", JSON.stringify([...data, obj]));
-  
-  checkRegistered(data);
+  // REVIEW: this could be extracted, also the approach with `.forEach` is not good
+  usersData.forEach((element, index) => {
+    if (element.name === nameInput.value) {   
+      user.trainingAtack = element.trainingAtack;
+      user.practise = element.practise;
+      usersData.splice(index, 1);
+    }
+  });
+
+  localStorage.setItem("data", JSON.stringify([...usersData, user]));
 }
 
-function checkIn(data) {
+function checkIn(usersData) {
   const nameInput = document.querySelector(".name");
   const checkInBtn = document.querySelector(".check-in");
 
-  if (nameInput && data.length > 0)
-    nameInput.value = data[data.length - 1].name;
-    
+  if (nameInput && usersData.length > 0)
+    nameInput.value = usersData[usersData.length - 1].name;
+
   checkInBtn?.addEventListener("click", function () {
-    let inputNameValue = renderValidation(nameInput);
-    nameInput.value = nameInput.value;
-    nameInput.addEventListener("input", () => {
-      renderValidation(nameInput);
-    });
-    nameInput.focus();
-    renderValidation(nameInput);
-    if (inputNameValue === true) {
-      submitUserData(data);
-    }
+    submitUserData(usersData);
   });
 }
 

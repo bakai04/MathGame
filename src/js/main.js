@@ -1,13 +1,15 @@
 import "../css/main.scss";
 import checkIn from "./checkIn.js";
-import navbar from "./navbar.js";
+import setNavbar from "./navbar.js";
 import getUsersData from "./getUsersData.js";
-import startGame from "./startGame.js";
+import playAgain from "./playAgain.js";
+import {renderTask} from "./renderTask.js";
+import stopGame from "./stopGame.js";
 
 const usersData = getUsersData();
-usersData.then(data=>{
-  checkIn(data);
-  navbar(data);
-});
-startGame()
+checkIn(usersData);
+setNavbar(usersData);
+stopGame(usersData);
+renderTask();
+playAgain();
 

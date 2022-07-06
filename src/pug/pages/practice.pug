@@ -3,20 +3,18 @@ block content
     .container
         include ../includes/navbar
         .practise
-            .rules.active
-                .rules__inner.bag-white.col-7
-                    h2.rules__title Правила этого режима
-                    p.rules__text.col-8 В этом режиме вы можете играть сколько вам захочиться. Уровень задач будет менятся автоматически. Чем больше уровень тем сложнее задачи и больше очков 
-                    button.toggle-game__btn.start-btn Start game
             .game
                 .container.bag-white
-                    p.level Level: 1
+                    .d-flex.align-items-center.game__inform
+                        p.level Level: 1
+                        p.correct correct: 0
+                        p.incorrect Incorrect: 0
                     .tasks
                         form.task-form(onsubmit='return false')
                             .task
                             input.result(type='number')
                         .center
                             h3 Score:
-                            .count 0
+                            p.count 0
     include ../includes/result
 

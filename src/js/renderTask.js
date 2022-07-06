@@ -1,63 +1,38 @@
-import stopGame from "./stopGame.js";
 
-const getRandom = (min, max) => {
-  return Math.round(Math.random() * (max - min) + min);
-};
+import {
+  generateExample,
+  renderExample,
+  renderLevel,
+  renderGameInformation,
+} from "./renderExampleFunc.js";
 
-const sum = (a, b, operator) => {
-  if (operator === "+") return a + b;
-  if (operator === "-") return a - b;
-  return a * b;
-};
-
-const generateExample = () => {
-  const operators = ["+", "-", "*"];
-  const num1 = getRandom(1, 10);
-  const num2 = getRandom(1, 10);
-  const operator = operators[getRandom(0, 2)];
-  const result = sum(num1, num2, operator);
-  return { num1, num2, operator, result };
-};
-
-const renderExample = (data) => {
-  const task = document.querySelector(".task");
-  const form = document.querySelector(".task-form");
-  form?.classList.remove("task-form--active");
-  form?.classList.add("task-form--active");
-  if (task) task.innerHTML = `${data.num1} ${data.operator} ${data.num2} =`;
-};
-
-const renderLevel = (count) => {
-  const level = document.querySelector(".level");
-  if (count >= 0) {
-    level.textContent = `Level: ${String(count).length}`;
-    return String(count).length;
-  }
-};
-
-export function renderTask() {
+export function renderTask(usersData) {
   const result = document.querySelector(".result");
-  const winElement = document.querySelector(".count");
   const form = document.querySelector(".task-form");
   const stopBtn = document.querySelector(".stop-btn");
 
   let count = 0;
   let example = generateExample();
   let point = 1;
+  let corect = 0;
+  let inCorrect = 0;
 
-  stopBtn.addEventListener("click", () => {
-    stopGame(count);
-  });
-  
   result?.focus();
   renderExample(example);
 
   form?.addEventListener("submit", () => {
+    // REVIEW: contradiction in conditional
     if (!result.value && result.value !== 0) return;
-    count +=
-      Number(result.value) === Number(example.result) ? point : point * -1;
-    winElement.textContent = count;
 
+    if (Number(result.value) === example.result) {
+      corect++;
+      count += point;
+    } else {
+      inCorrect++;
+      count -= point;
+    }
+
+    renderGameInformation(count, corect, inCorrect);
     point = renderLevel(count);
     result.value = "";
     example = generateExample();
