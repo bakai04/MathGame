@@ -1,4 +1,3 @@
-
 import {
   generateExample,
   renderExample,
@@ -9,7 +8,6 @@ import {
 export function renderTask(usersData) {
   const result = document.querySelector(".result");
   const form = document.querySelector(".task-form");
-  const stopBtn = document.querySelector(".stop-btn");
 
   let count = 0;
   let example = generateExample();
@@ -21,8 +19,7 @@ export function renderTask(usersData) {
   renderExample(example);
 
   form?.addEventListener("submit", () => {
-    // REVIEW: contradiction in conditional
-    if (!result.value && result.value !== 0) return;
+    if (result.value === "") return;
 
     if (Number(result.value) === example.result) {
       corect++;
@@ -31,6 +28,13 @@ export function renderTask(usersData) {
       inCorrect++;
       count -= point;
     }
+    form.classList.toggle("game__left");
+    form.classList.toggle("game__right");
+    setTimeout(() => {
+      form.classList.toggle("game__right");
+      form.classList.toggle("game__left");
+
+    }, 500);
 
     renderGameInformation(count, corect, inCorrect);
     point = renderLevel(count);

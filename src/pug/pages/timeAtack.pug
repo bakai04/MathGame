@@ -5,10 +5,12 @@ block content
         .practise
             .game
                 .container.bag-white
-                    .d-flex.align-items-center.game__inform
-                        p.level Level: 1
-                        p.correct correct: 0
-                        p.incorrect Incorrect: 0
+                    .d-flex.align-items-center.justify-content-between
+                        .d-flex.align-items-center.game__inform
+                            p.level Level: 1
+                            p.correct correct: 0
+                            p.incorrect Incorrect: 0
+                        p.timer 01:00
                     .tasks
                         form.task-form(onsubmit='return false')
                             .task
