@@ -12,12 +12,11 @@ block content
                             p.incorrect Incorrect: 0
                         p.timer 01:00
                     .tasks
-                        form.task-form(onsubmit='return false')
+                        form.task-form.game__right(onsubmit='return false')
                             .task
                             input.result(type='number')
                         .center
                             h3 Score:
                             p.count 0
     include ../includes/result
-
 

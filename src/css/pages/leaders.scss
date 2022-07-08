@@ -1,9 +1,11 @@
 .leaders {
     padding-top: 15px;
     width: 100%;
-    a{
+
+    a {
         text-decoration: none;
     }
+
     .back-to-main {
         margin-left: 15px;
         color: black;
@@ -22,24 +24,39 @@
         }
 
         .mode__inner {
+            margin: 0 auto;
+            width: 300px;
             gap: 15px;
 
-            .timeAtack-radio,
-            .practise-radio {
-                width: 120px;
+            input {
+                -webkit-appearance: none;
+            }
+
+            .game-mode__item {
+                width: 100%;
+            }
+
+            .practice:checked+.practice-label {
+                background: #0278ED;
+                color: white;
+            }
+
+            .timeAtack:checked+.timeAtack-label {
+                background: #0278ED;
+                color: white;
+            }
+
+            label {
+                width: 100%;
                 padding: 5px 0px;
                 border-radius: 5px;
                 border: 2px solid #0278ED;
                 transition: all ease-in-out 0.1s;
                 color: #0278ED;
-            }
-            .timeAtack-radio:hover,
-            .practise-radio:hover{
-                box-shadow: #0278ED 0px 0px 10px, #0278ED 0px 0px 10px, #0278ED 0px 0px 10px;
-            }
-            .active-mode{
-                background-color: #0278ED;
-                color: white;
+
+                &:hover {
+                    box-shadow: #0278ED 0px 0px 10px, #0278ED 0px 0px 10px, #0278ED 0px 0px 10px;
+                }
             }
         }
     }

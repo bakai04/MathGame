@@ -10,8 +10,12 @@ block content
             div.mode
                 p.mode__title Game mode
                 .mode__inner.d-flex.justify-content-center
-                    button.practise-radio.active-mode(disabled="true") Practise
-                    button.timeAtack-radio TimeAttack
+                    .game-mode__item 
+                        input.mode.practice(type="radio" name="radio" id="practice")
+                        label.practice-label(for="practice") Practice 
+                    .game-mode__item
+                        input.mode.timeAtack(type="radio" name="radio" id="timeAtack")
+                        label.timeAtack-label(for="timeAtack") TimeAttack
             .leaders__inner 
                 .columns.d-flex.justify-content-between
                     p.column__name name

@@ -1,12 +1,14 @@
-const timeAtackBtn = document.querySelector(".timeAtack-radio");
-const practiceBtn = document.querySelector(".practise-radio");
 const leaders = document.querySelector(".leaders__list");
+const prevGameMode = JSON.parse(localStorage.getItem("mode"));
+const modes = document.querySelectorAll(".mode");
 
-const toggleMode = (usersData, activeMode) => {
-  timeAtackBtn.classList.toggle("active-mode");
-  practiceBtn.classList.toggle("active-mode");
-  sortUsers(usersData, activeMode);
-  showLeaders(usersData, activeMode);
+const toggleMode = (usersData) => {
+  modes.forEach((el) => {
+    if (el.checked) {
+      sortUsers(usersData, el.id);
+      showLeaders(usersData, el.id);
+    }
+  });
 };
 
 const showLeaders = (usersData, activeMode) => {
@@ -33,21 +35,11 @@ const sortUsers = (usersData, activeMode) => {
 };
 
 function renderLeaders(usersData) {
-  if (leaders) {
-    sortUsers(usersData, "practice");
-    showLeaders(usersData, "practice");
-  }
-  practiceBtn?.addEventListener("click", () => {
-    toggleMode(usersData, "practice");
-    practiceBtn.disabled = true;
-    timeAtackBtn.disabled = false;
-  
-  });
+  const modeSpace = document.querySelector(".mode__inner");
+  document.querySelector(`#${prevGameMode}`).checked = true;
 
-  timeAtackBtn?.addEventListener("click", () => {
-    toggleMode(usersData, "timeAtack");
-    timeAtackBtn.disabled =true;
-    practiceBtn.disabled = false;
-  });
+  toggleMode(usersData);
+  modeSpace.addEventListener("change", ()=>{toggleMode(usersData)});
+
 }
 export default renderLeaders;

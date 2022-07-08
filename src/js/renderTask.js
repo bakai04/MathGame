@@ -11,7 +11,6 @@ export function renderTask(usersData) {
 
   let count = 0;
   let example = generateExample();
-  let point = 1;
   let corect = 0;
   let inCorrect = 0;
 
@@ -20,24 +19,16 @@ export function renderTask(usersData) {
 
   form?.addEventListener("submit", () => {
     if (result.value === "") return;
-
     if (Number(result.value) === example.result) {
       corect++;
-      count += point;
+      count += 1;
     } else {
       inCorrect++;
-      count -= point;
+      count -= 1;
     }
-    form.classList.toggle("game__left");
-    form.classList.toggle("game__right");
-    setTimeout(() => {
-      form.classList.toggle("game__right");
-      form.classList.toggle("game__left");
-
-    }, 500);
 
     renderGameInformation(count, corect, inCorrect);
-    point = renderLevel(count);
+    renderLevel(count);
     result.value = "";
     example = generateExample();
     renderExample(example);

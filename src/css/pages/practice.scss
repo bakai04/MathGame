@@ -21,6 +21,7 @@
     }
 
     .tasks {
+      overflow: hidden;
       .task-form {
         position: relative;
         display: flex;

@@ -1,3 +1,4 @@
+import chooseMode from "./chooseMode.js";
 const nameInput = document.querySelector(".name");
 
 function submitUserData(usersData) {
@@ -7,7 +8,6 @@ function submitUserData(usersData) {
     practice: 0,
   };
 
-  // REVIEW: this could be extracted, also the approach with `.forEach` is not good
   usersData.forEach((element, index) => {
     if (element.name === nameInput.value) {   
       user.timeAtack = element.timeAtack;
@@ -19,15 +19,17 @@ function submitUserData(usersData) {
   localStorage.setItem("data", JSON.stringify(usersData));
 }
 
+
+
 function checkIn(usersData) {
-  const nameInput = document.querySelector(".name");
-  const checkInBtn = document.querySelector(".check-in");
+  const checkInBtn = document.querySelector(".lets-go");
 
   if (nameInput && usersData.length > 0)
     nameInput.value = usersData[0].name;
 
   checkInBtn?.addEventListener("click", function () {
     submitUserData(usersData);
+    chooseMode();
   });
 }
 

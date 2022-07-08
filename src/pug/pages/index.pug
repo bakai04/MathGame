@@ -7,12 +7,16 @@ block content
             .placeholder-form
                 .placeholder-container
                   input.name(type='text', placeholder=' ', name="name")
-                  label.warning-name-error name 
-            button.check-in Check in 
-            .mode
+                  label name 
+            .game-mode
                 p Choose Your Game Mode
-                form(action="./practice.html")
-                    button.practice Practice
-                form(action="./timeAtack.html")
-                    button.timeAttack Time Attack
+                .game-mode__inner
+                    .game-mode__item 
+                        input.mode.practice(type="radio" name="radio" checked id="practice")
+                        label.practice-label(for="practice") Practice 
+                    .game-mode__item
+                        input.mode.timeAtack(type="radio" name="radio" id="timeAtack")
+                        label.timeAtack-label(for="timeAtack") TimeAttack
+            form(action="./game.html") 
+                button.lets-go Lets Go 
             a.leaders(href="./leaders.html") Leaders
