@@ -3,6 +3,7 @@ import {
   renderExample,
   renderLevel,
   renderGameInformation,
+  countAnimated,
 } from "./renderExampleFunc.js";
 
 export function renderTask(usersData) {
@@ -27,6 +28,7 @@ export function renderTask(usersData) {
       count -= 1;
     }
 
+    countAnimated(Number(result.value) === example.result);
     renderGameInformation(count, corect, inCorrect);
     renderLevel(count);
     result.value = "";

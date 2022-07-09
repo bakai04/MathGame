@@ -93,3 +93,22 @@ const showGameInformation = (counterElements, gameInformation) => {
     element.textContent = gameInformation;
   });
 };
+
+export function countAnimated(exampleValid) {
+  const trueFalse = document.querySelector(".true-false");
+  const count = document.querySelector(".count");
+
+  if (exampleValid) {
+    trueFalse.textContent = "+1";
+    trueFalse.classList.remove("error");
+  } else {
+    trueFalse.textContent = "-1";
+    trueFalse.classList.add("error");
+    count.classList.add("error-example")
+  }
+  trueFalse.classList.add("true-false--active");
+  setTimeout(() => {
+    trueFalse.classList.remove("true-false--active");
+    count.classList.remove("error-example")
+  }, 900);
+}
