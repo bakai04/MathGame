@@ -1,32 +1,27 @@
 @media(max-width: 540px){
     .gameBoard { 
-        p {
+        h2 {
             font-size: 30px;
-        }
-    
-        .warning-name-error {
-            font-size: 14px;
-            text-align: left;
-            color: red;
-        }
-    
+        }  
         .logo {
             width: 130px;
         }
-    
-        input {
-            margin-top: 18px;
-            height: 50px;
-            font-size: 18px;
+        .placeholder-container input:focus+label,
+        .placeholder-container input:not(:placeholder-shown)+label {
+            top: 8px;
         }
-        .mode {
-            margin-top: 20px;
-            width: 100%;
-    
-            p {
-                font-size: 25px;
+        .placeholder-container{
+            input {
+                margin-top: 18px;
+                height: 50px;
+                font-size: 18px;
+            }
+        }
+        .game-mode{
+            .mode__title{
+                font-size: 24px;
             }
     
-        }
+        }        
     }
 }

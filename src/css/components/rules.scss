@@ -1,0 +1,44 @@
+.rules {
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.35);
+
+    .rules__inner {
+        animation-name: scaling;
+        animation-duration: 1s;
+        width: 60vw;
+        margin: 0 auto;
+        background-color: #FFF;
+        border-radius: 5px;
+        padding: 20px;
+        .rules__item {
+            padding-left: 0px;
+            .rules__title {
+                font-size: 25px;
+            }
+
+            p {
+                margin: 0px;
+            }
+            ul{
+                margin-top: 10px;
+            }
+        }
+
+
+    }
+
+}
+@keyframes scaling{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+
+}

@@ -1,5 +1,6 @@
 import chooseMode from "./chooseMode.js";
 const nameInput = document.querySelector(".name");
+const checkInBtn = document.querySelector(".lets-go");
 
 function submitUserData(usersData) {
   const user = {
@@ -9,7 +10,7 @@ function submitUserData(usersData) {
   };
 
   usersData.forEach((element, index) => {
-    if (element.name === nameInput.value) {   
+    if (element.name === nameInput.value) {
       user.timeAtack = element.timeAtack;
       user.practice = element.practice;
       usersData.splice(index, 1);
@@ -19,13 +20,18 @@ function submitUserData(usersData) {
   localStorage.setItem("data", JSON.stringify(usersData));
 }
 
-
+function inputValidation() {
+  checkInBtn.disabled = !nameInput.value;
+  nameInput?.addEventListener("input", () => {
+    checkInBtn.disabled = !nameInput.value;
+  });
+}
 
 function checkIn(usersData) {
-  const checkInBtn = document.querySelector(".lets-go");
-
-  if (nameInput && usersData.length > 0)
-    nameInput.value = usersData[0].name;
+  if (nameInput) {
+    nameInput.value = usersData[0]?.name || "";
+    inputValidation();
+  }
 
   checkInBtn?.addEventListener("click", function () {
     submitUserData(usersData);

@@ -1,17 +1,19 @@
 const leaders = document.querySelector(".leaders__list");
-const prevGameMode = JSON.parse(localStorage.getItem("mode"));
+const prevGameMode = JSON.parse(localStorage.getItem("mode")) ?? "practice";
 const modes = document.querySelectorAll(".mode");
 
 const showLeaders = (usersData, activeMode, activeUser) => {
   leaders.innerHTML = "";
-  usersData.forEach((element) => {
-    leaders.innerHTML += `<li class=${activeUser.name===element.name && "active-user"}>
+    usersData.forEach((element) => {
+      leaders.innerHTML += `<li class=${
+        activeUser.name === element.name && "active-user"
+      }>
       <div class="leaders__item">
           <p class="name">${element.name}</p>
           <p class="score">${element[activeMode]}</p>
       </div>
   </li>`;
-  });
+    });
 };
 
 const sortUsers = (usersData, activeMode) => {

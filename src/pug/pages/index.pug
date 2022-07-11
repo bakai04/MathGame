@@ -1,15 +1,32 @@
 extends ../sample.pug
 block content
+    .rules.d-flex.align-items-center.justify-content-center.d-none
+        .container 
+           .rules__inner
+                .rules__item
+                    h2.rules__title Practice
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum fugit ut nisi quidem neque nihil porro iusto non, maxime officia possimus est accusamus ducimus ad blanditiis, at molestias error culpa! 
+                    ul
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                .rules__item 
+                    h2.rules__title Time Attack
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum fugit ut nisi quidem neque nihil porro iusto non, maxime officia possimus est accusamus ducimus ad blanditiis, at molestias error culpa! 
+                    ul
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+
     .container
         .gameBoard
             img.logo(src="./assets/img/maths-1426891_960_720.webp")
-            p Hello Gamer
+            h2 Hello Gamer
             .placeholder-form
                 .placeholder-container
-                  input.name(type='text', placeholder=' ', name="name")
-                  label name 
+                    input.name(type='text', placeholder=' ', name="name")
+                    label name 
             .game-mode
-                p Choose Your Game Mode
+                p.mode__title Choose Your Game Mode
                 .game-mode__inner
                     .game-mode__item 
                         input.mode.practice(type="radio" name="radio" checked id="practice")
@@ -18,5 +35,7 @@ block content
                         input.mode.timeAtack(type="radio" name="radio" id="timeAtack")
                         label.timeAtack-label(for="timeAtack") TimeAttack
             form(action="./game.html") 
-                button.lets-go Lets Go 
-            a.leaders(href="./leaders.html") Leaders
+                button.lets-go Lets Go
+            form(action="./leaders.html") 
+                button.leaders-btn Leaders
+            p.rules-btn don’t know rules? clicke here!
