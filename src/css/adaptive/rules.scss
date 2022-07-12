@@ -1,0 +1,36 @@
+@media(max-width: 768px) {
+    .rules {
+        .rules__inner {
+            width: 80vw;
+            margin: 0 auto;
+
+            .rules__item {
+                .rules__title {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                    margin: 0px;
+                }
+
+                ul {
+                    margin-top: 10px;
+
+                    li {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width: 576px) {
+    .rules {
+        .rules__inner {
+            width: 90vw;
+            margin: 0 auto;
+
+        }
+    }
+}

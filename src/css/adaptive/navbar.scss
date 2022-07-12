@@ -1,0 +1,36 @@
+@media(max-width: 576px){
+    .header {
+        .header__logo {
+            display: flex;
+            align-items: center;
+            .logo {
+                width: 60px;
+            }
+            .user-data {
+                flex-direction: column;
+                margin-left: 10px;
+    
+                .user-name {
+                    font-size: 16px;
+                    margin: 0px;
+                }
+                .raiting {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 14px;
+                    margin: 0px;
+    
+                }
+            }
+        }
+        .toggle-game__btn {
+            height: 40px;
+            font-size: 14px;
+            width: 120px;
+        }
+        
+        .toggle-game__btn:hover {
+            background-color: #56a4f1;
+        }
+    }
+}

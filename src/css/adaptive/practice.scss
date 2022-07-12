@@ -1,3 +1,55 @@
-@media(max-width: 768px){
+@media(max-width: 768px) {
+    .game {
+        .tasks {
+            overflow: hidden;
+            text-align: center;
 
+            .task-form {
+                .task {
+                    font-size: 60px;
+                }
+
+                .result {
+                    width: 120px;
+                    font-size: 60px;
+                    padding: 5px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 576px) {
+    .game {
+        .tasks {
+            overflow: hidden;
+            text-align: center;
+            .score{
+                display: flex;
+                flex-direction: row;
+                .count{
+                    font-size: 27px;
+                    margin-left: 5px;
+                }
+            }
+            .task-form {
+                flex-direction: column;
+                .task,.smooth {
+                    letter-spacing: 10px;
+                    margin: 0;
+                }
+
+                .result {
+                    width: 120px;
+                    padding: 5px;
+                    margin: 0;
+                }
+            }
+        }
+        .toggle-game__btn {
+            height: 40px;
+            font-size: 14px;
+            width: 150px;
+          }
+    }
 }

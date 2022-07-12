@@ -1,25 +1,32 @@
-.result-page{
+.result-page {
     position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.35);
+    .container{
+        height: auto;
+    }
     .result__inner {
         animation-name: scaling;
         animation-duration: 1s;
         background-color: #FFF;
         padding: 15px;
         margin: 0 auto;
-        a{
+
+        a {
             text-decoration: none;
         }
+
         .back-to-main {
             margin-left: 15px;
             color: black;
         }
 
         .result__item {
+            width: 60%;
+            margin: 0 auto;
             .game-over {
                 font-size: 40px;
                 margin-top: 10px;
@@ -40,11 +47,13 @@
                 font-size: 20px;
                 margin: 0px;
             }
-            .incorrect{
+
+            .incorrect {
                 margin-bottom: 10px;
             }
+
             button {
-                width: 341px;
+                width: 100%;
                 padding: 16px;
                 border: 0px;
                 letter-spacing: 1.5px;
@@ -53,8 +62,8 @@
                 background: #0487B0;
                 color: #FFFFFF;
             }
-            
-            button:hover{
+
+            button:hover {
                 background-color: #56a4f1;
             }
         }

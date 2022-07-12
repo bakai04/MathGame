@@ -56,7 +56,7 @@ export const renderExample = (data) => {
   const form = document.querySelector(".task-form");
   const task = document.querySelector(".task");
 
-  if (task) task.innerHTML = `${data.num1} ${data.operator} ${data.num2} =`;
+  if (task) task.innerHTML = `${data.num1} ${data.operator} ${data.num2}`;
 
   form.classList.toggle("game__left");
   form.classList.toggle("game__right");

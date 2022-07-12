@@ -2,22 +2,22 @@ extends ../sample.pug
 block content
     .container
         include ../includes/navbar
-        .practise
-            .game
-                .container.bag-white
-                    .d-flex.align-items-center.justify-content-between
-                        .d-flex.align-items-center.game__inform
-                            p.level Level: 1
-                            p.correct correct: 0
-                            p.incorrect Incorrect: 0
-                        p.timer 01:00
-                    .tasks
-                        form.task-form.game__right(onsubmit='return false')
-                            .task
-                            input.result(type='number')
-                        .center
-                            h3 Score:
-                            p.count 0
-                            p.true-false +1
+        .game
+            .d-flex.align-items-center.justify-content-between
+                .d-flex.align-items-center.game__inform
+                    p.level Level: 1
+                    p.correct.d-none.d-md-block correct: 0
+                    p.incorrect.d-none.d-md-block Incorrect: 0
+                button.toggle-game__btn.stop-btn Stop game                
+            .tasks  
+                form.task-form.game__right(onsubmit='return false')
+                    .task 
+                    p.smooth.d-none.d-sm-block =
+                    input.result(type='number')
+                .center
+                    .score
+                        p Score:
+                        p.count 0
+                    p.true-false +1
     include ../includes/result
 

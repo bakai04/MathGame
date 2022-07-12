@@ -1,4 +1,7 @@
 .rules {
+    .container{
+        height: auto;
+    }
     position: fixed;
     z-index: 10;
     width: 100vw;
@@ -9,14 +12,16 @@
 
     .rules__inner {
         animation-name: scaling;
-        animation-duration: 1s;
-        width: 60vw;
+        animation-duration: 0.7s;
+        width: 50vw;
         margin: 0 auto;
         background-color: #FFF;
         border-radius: 5px;
         padding: 20px;
+
         .rules__item {
             padding-left: 0px;
+
             .rules__title {
                 font-size: 25px;
             }
@@ -24,20 +29,20 @@
             p {
                 margin: 0px;
             }
-            ul{
+
+            ul {
                 margin-top: 10px;
             }
         }
-
-
     }
-
 }
-@keyframes scaling{
-    from{
+
+@keyframes scaling {
+    from {
         transform: scale(0);
     }
-    to{
+
+    to {
         transform: scale(1);
     }
 

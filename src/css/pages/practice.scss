@@ -1,100 +1,126 @@
-.practise {
-  display: flex;
+.container {
+  height: calc(100vh - 100px);
+}
+
+.game {
   align-items: center;
-  justify-content: center;
   background-color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
 
-  .game {
-    width: 100%;
-    padding: 15px;
+  .game__inform {
+    gap: 25px;
 
-    .game__inform {
-      gap: 25px;
+    p {
+      margin: 0px;
+    }
+  }
+
+  .center {
+    position: relative;
+    margin: 0 auto;
+
+    .score {
+      flex-direction: column;
+      .count {
+        font-size: 60px;
+        text-align: center;
+      }
+    }
+    .true-false {
+      position: absolute;
+      opacity: 0;
+      right: -10px;
+      color: #61da7d;
     }
 
-    .timer {
-      font-size: 25px;
+    .true-false--active {
+      animation-name: counts;
+      animation-duration: 1s;
+      top: 60px;
     }
 
-    .level {
-      font-size: 25px;
+    .error {
+      color: red;
     }
 
-    .tasks {
-      overflow: hidden;
+    p {
+      margin: 0px;
+      font-size: 26px;
+    }
+  }
 
-      .task-form {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 3vw;
+  .level {
+    font-size: 25px;
+  }
 
-        .task {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 70px;
-          padding: 5vw;
-        }
+  .tasks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
 
-        .result {
-          border: 2px solid #000;
-          border-radius: 8px;
-          width: 200px;
-          font-size: 70px;
-          padding: 2vw;
-          overflow: hidden;
-        }
+    .task-form {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3vw;
 
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-        }
-
+      .task,
+      .smooth {
+        font-size: 70px;
+        margin: 0;
       }
 
-      .center {
-        margin: 0 auto;
-        position: relative;
-        width: fit-content;
+      .task {
+        margin-right: 15px;
+      }
 
-        .count {
-          font-size: 60px;
-          text-align: center;
-        }
+      .result {
+        border: 0px;
+        border-bottom: 2px solid #0278ED;
+        outline: none;
+        color: #212529;
+        width: 150px;
+        font-size: 70px;
+        padding: 0px 10px;
+        overflow: hidden;
+        margin-left: 20px;
+      }
 
-        .true-false {
-          position: absolute;
-          right: -10px;
-          color: #61da7d;
-        }
-
-        .true-false--active {
-          animation-name: counts;
-          animation-duration: 1s;
-          top: 60px;
-        }
-
-        .error {
-          color: red;
-        }
-
-        h3 {
-          margin-top: 30px;
-          font-size: 26px;
-        }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
       }
 
     }
   }
+
+  .toggle-game__btn {
+    height: 50px;
+    font-size: 16px;
+    border: 0px;
+    letter-spacing: 2px;
+    width: 235px;
+    color: #FFF;
+    border-radius: 5px;
+    transition: ease 0.2s;
+    background-color: #0278ED;
+  }
+
+  .toggle-game__btn:hover {
+    background-color: #56a4f1;
+  }
 }
-.error-example{
+
+.error-example {
   animation-name: error;
   animation-duration: 0.5s;
-}
-.bag-white {
-  background-color: #fff;
 }
 
 .active {
@@ -107,13 +133,13 @@
 
 .game__right {
   animation-name: shows;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   right: 0%;
 }
 
 .game__left {
   animation-name: lefts;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   left: 0%;
 }
 
@@ -125,14 +151,14 @@
   }
 
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50vw);
     opacity: 1;
   }
 }
 
 @keyframes shows {
   from {
-    transform: translateX(100%);
+    transform: translateX(50vw);
     opacity: 0.1;
   }
 
@@ -141,7 +167,6 @@
     opacity: 1;
   }
 }
-
 @keyframes counts {
   from {
     top: 60px;
@@ -153,23 +178,29 @@
     opacity: 0;
   }
 }
+
 @keyframes error {
   from {
     transform: translateX(-3px);
   }
-  20%{
+
+  20% {
     transform: translateX(6px);
   }
-  40%{
+
+  40% {
     transform: translateX(-3px);
   }
-  60%{
+
+  60% {
     transform: translateX(6px);
   }
-  80%{
+
+  80% {
     transform: translateX(-3px);
   }
+
   to {
-    transform: translateX(0px);    
+    transform: translateX(0px);
   }
 }

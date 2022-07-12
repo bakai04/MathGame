@@ -6,7 +6,7 @@ import {
   countAnimated,
 } from "./renderExampleFunc.js";
 
-export function renderTask(usersData) {
+export function renderTask() {
   const result = document.querySelector(".result");
   const form = document.querySelector(".task-form");
 

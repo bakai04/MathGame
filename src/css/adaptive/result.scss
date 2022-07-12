@@ -1,0 +1,47 @@
+@media(max-width: 400px) {
+    .result-page {
+        .result__inner {
+            .result__item {
+                width: 90%;
+                .game-over {
+                    font-size: 30px;
+                }
+
+                .your-count {
+                    font-size: 20px;
+                }
+
+                .count {
+                    font-size: 60px;
+                    line-height: 80px;
+                    margin-bottom: 10px;
+                }
+
+                .incorrect,
+                .correct {
+                    font-size: 18px;
+                    margin: 0px;
+                }
+
+                .incorrect {
+                    margin-bottom: 10px;
+                }
+
+                button {
+                    width: 100%;
+                    padding: 12px;
+                    border: 0px;
+                    letter-spacing: 1.5px;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    background: #0487B0;
+                    color: #FFFFFF;
+                }
+
+                button:hover {
+                    background-color: #56a4f1;
+                }
+            }
+        }
+    }
+}
