@@ -1,4 +1,4 @@
-@media(max-width: 540px){
+@media(max-width: 576px){
     .gameBoard { 
         h2 {
             font-size: 30px;
@@ -6,6 +6,10 @@
         .logo {
             width: 130px;
         }
+        .placeholder-container label {
+            top: 30px;
+        }
+    
         .placeholder-container input:focus+label,
         .placeholder-container input:not(:placeholder-shown)+label {
             top: 8px;

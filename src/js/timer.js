@@ -2,7 +2,7 @@ import { checkLastRecord } from "./stopGame.js";
 
 const gameMode = JSON.parse(localStorage.getItem("mode"));
 const timer = document.querySelector(".timer");
-let endTime = 30;
+let endTime = 120;
 
 function renderTime() {
   let second = String(endTime % 60).padStart(2, "0");
